@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Método Renda Digital Express</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+html{scroll-behavior:smooth}
+
+body {
+    background: linear-gradient(rgba(10, 11, 13, 0.85), rgba(10, 11, 13, 0.9)), 
+                url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1920&auto=format&fit=crop&q=80');
+    background-size: 140% auto;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    animation: moverDinheiro 45s infinite linear alternate;
+}
+
+@keyframes moverDinheiro {
+    0% { background-position: 0% center; }
+    100% { background-position: 100% center; }
+}
+
+.hero{text-align:center;padding:60px 20px}
+.badge{display:inline-block;background:#00ff8730;color:#00ff87;padding:10px 20px;border-radius:30px;margin-bottom:20px;font-size:0.9rem;font-weight:bold}
+h1{font-size:3rem;line-height:1.2}
+h1 span{color:#00ff87}
+.sub{max-width:700px;margin:20px auto;color:#ccc;font-size:1.1rem;line-height:1.5}
+
+.product{width:300px;max-width:90%;border-radius:20px;display:block;margin:20px auto;box-shadow: 0 10px 30px rgba(0,0,0,0.7);background:#15181d}
+
+.price{font-size:55px;color:#00ff87;font-weight:900;margin-top:5px}
+.old{text-decoration:line-through;color:#666;font-size:1.1rem}
+.btn,.btn2{display:inline-block;padding:15px 30px;border-radius:40px;text-decoration:none;font-weight:bold;margin:10px;transition:transform 0.2s}
+.btn:hover, .btn2:hover{transform:scale(1.03)}
+.btn{background:#25D366;color:#fff;box-shadow:0 4px 15px rgba(37,211,102,0.3)}
+.btn2{border:1px solid #00ff87;color:#00ff87}
+.section{max-width:1100px;margin:auto;padding:60px 20px}
+.section h2{margin-bottom:10px;font-size:1.8rem}
+.section h2 span{color:#00ff87}
+.section-desc{color:#888;margin-bottom:30px;font-size:0.95rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+
+/* --- ESTILO PADRÃO DOS CARDS --- */
+.card{background:rgba(21, 24, 29, 0.75);padding:25px;border-radius:15px;border:1px solid rgba(255,255,255,0.05);backdrop-filter: blur(8px);position:relative}
+.card h3{color:#fff;margin-bottom:10px;font-size:1.2rem}
+.card p{color:#aaa;font-size:0.9rem;line-height:1.4}
+.card p strong{color:#00ff87}
+
+/* --- DESIGN EXCLUSIVO PARA DESTACAR OS BÔNUS --- */
+.card.bonus-highlight {
+    background: rgba(0, 255, 135, 0.04);
+    border: 2px solid #00ff87;
+    box-shadow: 0 0 20px rgba(0, 255, 135, 0.15);
+}
+.card.bonus-highlight h3 {
+    color: #00ff87;
+}
+.bonus-badge {
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    background: #ffb703;
+    color: #000;
+    font-size: 0.7rem;
+    font-weight: 900;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.bonus-value {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: #ffb703;
+    font-weight: bold;
+    background: rgba(255, 183, 3, 0.1);
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+/* --- ESTILOS DOS DEPOIMENTOS --- */
+.testimonial-card {
+    background: rgba(21, 24, 29, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.user-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00ff87;
+}
+.no-img {
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #666;
+    border: 2px solid #555;
+}
+.user-name h4 {
+    font-size: 0.95rem;
+    color: #fff;
+}
+.user-name span {
+    font-size: 0.75rem;
+    color: #888;
+}
+.stars {
+    color: #ffb703;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+.comment {
+    color: #ddd;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+footer{text-align:center;padding:40px;color:#555;font-size:0.85rem;border-top:1px solid rgba(255,255,255,0.05);margin-top:40px}
+
+@media (max-width: 768px) {
+    body { background-size: auto 130%; }
+    h1 { font-size: 2.2rem; }
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="badge">🔥 Oferta Especial: Vagas Limitadas</div>
+<h1>Método <span>Renda Digital Express</span></h1>
+
+<p class="sub">
+Aprenda estratégias práticas para começar no mercado digital usando apenas o celular.
+</p>
+
+<img src="produto.jpg" class="product" alt="Foto do Produto">
+
+<div class="old">De R$ 47,00</div>
+<div class="price">R$ 17,99</div>
+
+<a class="btn" href="https://wa.me/558881484583?text=Olá!+Quero+comprar+o+Método+Renda+Digital+Express." target="_blank">
+🛒 Quero Começar Agora
+</a>
+
+<br>
+
+<a class="btn2" href="#depoimentos">
+⭐ Ver Avaliações dos Clientes
+</a>
+</section>
+
+<!-- SEÇÃO "O QUE VOCÊ RECEBE" -->
+<section class="section">
+<h2>📦 Tudo o que você vai receber <span>hoje:</span></h2>
+<p class="section-desc">O material completo mais os bônus exclusivos que preparamos para acelerar os seus resultados.</p>
+
+<div class="cards">
+    <!-- BÔNUS 1 -->
+    <div class="card bonus-highlight">
+        <div class="bonus-badge">🎁 Bônus 01</div>
+        <h3>📘 Guia Digital Express</h3>
+        <p>O passo a passo definitivo e direto ao ponto para iniciantes. Esqueça teorias chatas, aqui você aprende a estratégia exata para começar a estruturar seu negócio digital.</p>
+        <div class="bonus-value">Valor Real: R$ 5,99 → Grátis Hoje</div>
+    </div>
+    
+    <!-- BÔNUS 2 -->
+    <div class="card bonus-highlight">
+        <div class="bonus-badge">🎁 Bônus 02</div>
+        <h3>💬 Scripts de Clicar e Colar</h3>
+        <p>Modelos prontos de mensagens de alta conversão. Você não vai precisar inventar o que falar: basta <strong>copiar, adaptar e fechar vendas</strong> com os clientes facilmente.</p>
+        <div class="bonus-value">Valor Real: R$ 20,00 → Grátis Hoje</div>
+    </div>
+    
+    <!-- BÔNUS 3 -->
+    <div class="card bonus-highlight">
+        <div class="bonus-badge" style="background:#00ff87;">🎁 Bônus 03</div>
+        <h3>📌 Checklist Antifalhas</h3>
+        <p>O seu mapa de bolso. Uma lista prática de verificação diária para você ter a certeza absoluta de que está fazendo tudo certo no seu dia a dia.</p>
+        <div class="bonus-value">Valor Real: R$ 9,99 → Grátis Hoje</div>
+    </div>
+    
+    <!-- BÔNUS 4 -->
+    <div class="card bonus-highlight">
+        <div class="bonus-badge">🎁 Bônus 04</div>
+        <h3>📅 Plano de Ação Dinâmico</h3>
+        <p>Um roteiro certeiro dividido por dias. Saiba exatamente o que fazer assim que acordar para colocar o seu <strong>negócio digital para rodar</strong> de forma organizada.</p>
+        <div class="bonus-value">Valor Real: R$ 10,99 → Grátis Hoje</div>
+    </div>
+</div>
+</section>
+
+<!-- SEÇÃO DE DEPOIMENTOS -->
+<section class="section" id="depoimentos">
+<h2>⭐ O que estão falando do material</h2>
+<div class="cards">
+    
+    <!-- Depoimento 1 -->
+    <div class="testimonial-card">
+        <div class="user-info">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=60" class="user-img" alt="Foto de Mariana">
+            <div class="user-name">
+                <h4>Mariana Souza</h4>
+                <span class="data-mista" data-mes="Junho" data-ano="2026">Carregando...</span>
+            </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="comment">"Vou ser bem sincera, comprei achando que era mais um golpe desses da internet pq tava muito barato kkkk mas o conteúdo é ótimo, bem direto e sem enrolação. Valeu muito a pena!"</p>
+    </div>
+
+    <!-- Depoimento 2 -->
+    <div class="testimonial-card">
+        <div class="user-info">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=60" class="user-img" alt="Foto de Carlos">
+            <div class="user-name">
+                <h4>Carlos Eduardo</h4>
+                <span class="data-mista" data-mes="Maio" data-ano="2026">Carregando...</span>
+            </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="comment">"A parte das mensagens prontas salvou demais. Eu não sabia o que falar quando as pessoas me chamavam, agora só copio e adapto. Já fiz minhas primeiras vendas."</p>
+    </div>
+
+    <!-- Depoimento 3 -->
+    <div class="testimonial-card">
+        <div class="user-info">
+            <div class="user-img no-img">👤</div>
+            <div class="user-name">
+                <h4>Thiago Santos</h4>
+                <span class="data-mista" data-mes="Abril" data-ano="2026">Carregando...</span>
+            </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="comment">"Conteúdo muito direto ao ponto. Comprei ontem de noite, li tudo em menos de uma hora e já comecei a organizar meu perfil. Pelo preço de um salgado, compensa demais."</p>
+    </div>
+
+    <!-- Depoimento 4 -->
+    <div class="testimonial-card">
+        <div class="user-info">
+            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&auto=format&fit=crop&q=60" class="user-img" alt="Foto de Lucas">
+            <div class="user-name">
+                <h4>Lucas Ribeiro</h4>
+                <span class="data-mista" data-mes="Março" data-ano="2026">Carregando...</span>
+            </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="comment">"Mano, sou estudante e tava precisando muito de uma renda extra pra ajudar nas minhas coisas aqui. Consegui aplicar os passos nos meus horários livres só usando o celular e deu super bom!"</p>
+    </div>
+
+    <!-- Depoimento 5 -->
+    <div class="testimonial-card">
+        <div class="user-info">
+            <div class="user-img no-img">👤</div>
+            <div class="user-name">
+                <h4>Juliana F.</h4>
+                <span class="data-mista" data-mes="Janeiro" data-ano="2026">Carregando...</span>
+            </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="comment">"Estava com medo de gastar dinheiro e não entender nada, mas a didática é excelente. Dá pra ver que foi feito para iniciantes mesmo. Parabéns pelo material!"</p>
+    </div>
+
+    <!-- Depoimento 6 -->
+    <div class="testimonial-card">
+        <div class="user-info">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&q=60" class="user-img" alt="Foto de Amanda">
+            <div class="user-name">
+                <h4>Amanda Lima</h4>
+                <span class="data-mista" data-mes="Dezembro" data-ano="2025">Carregando...</span>
+            </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="comment">"Muito prático pra quem só tem o celular pra estudar e trabalhar, que é o meu caso. O plano de ação em 7 dias clareou muito a minha mente. Recomendo."</p>
+    </div>
+
+    <!-- Depoimento 7 -->
+    <div class="testimonial-card">
+        <div class="user-info">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=60" class="user-img" alt="Foto de Fernanda">
+            <div class="user-name">
+                <h4>Fernanda Costa</h4>
+                <span class="data-mista" data-mes="Novembro" data-ano="2025">Carregando...</span>
+            </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="comment">"Eu sou meio lerda pra essas coisas de internet e tecnologia kkk mas achei o passo a passo bem facinho e qualquer pessoa consegue entender. O investimento se paga muito rápido."</p>
+    </div>
+
+    <!-- Depoimento 8 -->
+    <div class="testimonial-card">
+        <div class="user-info">
+            <div class="user-img no-img">👤</div>
+            <div class="user-name">
+                <h4>Rodrigo M.</h4>
+                <span class="data-mista" data-mes="Outubro" data-ano="2025">Carregando...</span>
+            </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="comment">"R$ 17 reais muito bem investidos. Já recuperei o valor na minha primeira venda aplicando o roteiro de conversação que vem junto. Recomendo de olhos closed."</p>
+    </div>
+
+    <!-- Depoimento 9 -->
+    <div class="testimonial-card">
+        <div class="user-info">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=60" class="user-img" alt="Foto de Bruno">
+            <div class="user-name">
+                <h4>Bruno Silva</h4>
+                <span class="data-mista" data-mes="Setembro" data-ano="2025">Carregando...</span>
+            </div>
+        </div>
+        <div class="stars">★★★★☆</div>
+        <p class="comment">"O material é excelente e muito explicativo. Só não dou 5 estrelas porque achei o checklist curto, mas o passo a passo compensa tudo. O suporte no zap é rápido!"</p>
+    </div>
+
+</div>
+</section>
+
+<footer>
+© 2026 Método Renda Digital Express • Todos os direitos reservados.
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var elementos = document.querySelectorAll('.data-mista');
+    
+    elementos.forEach(function(el) {
+        var mes = el.getAttribute('data-mes');
+        var ano = el.getAttribute('data-ano');
+        if (mes && ano) {
+            el.innerText = "Avaliado em " + mes + " de " + ano;
+        }
+    });
+});
+</script>
+
+</body>
+</html>
